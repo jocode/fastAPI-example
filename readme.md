@@ -43,3 +43,34 @@ To avoid executed the uvicorn command every time we make a change in the code, w
 ```bash
 uvicorn app:app --reload
 ```
+
+
+## Deploy to Heroku
+
+### Create the app
+
+First we need to download the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) and login to Heroku
+
+- `heroku --version`
+- `heroku login`
+
+- `cd fastapi-example`
+
+Initialize the git repository if you don't have one
+
+- `git init`
+- `git add .`
+- `git commit -m "Initial commit"`
+- `git branch -M main`
+
+Create the app in Heroku using the Heroku CLI
+
+- `heroku create fastapi-example-jocode`
+
+Or create in the web page and add the Heroku remote
+
+- `heroku git:remote -a fastapi-example-jocode`
+- `git push heroku main`
+
+
+:fire: **Note** Heroku isn't is for create databases, you can use [Heroku Postgres](https://www.heroku.com/postgres) or [Heroku Redis](https://www.heroku.com/redis) to create a database.
